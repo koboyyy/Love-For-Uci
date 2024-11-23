@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000; /* Latar hitam */
+  height: 100vh;
+  overflow: hidden; /* Supaya animasi tidak keluar layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cursive", sans-serif;
+}
+
+.container {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.2em;
+  color: #fff;
+  font-family: "Great Vibes", cursive; /* Font bergaya tulisan pena */
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+span {
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  animation: float 8s linear infinite;
+  opacity: 0;
+  transform-origin: center;
+  /* Tidak ada filter blur lagi */
+}
+
+.heart svg {
+  width: 100%;
+  height: 100%;
+  fill: #e91e63; /* Pink kemerahan */
+  /* Efek glow terang tanpa blur */
+  filter: drop-shadow(0 0 10px #e91e63) drop-shadow(0 0 20px #e91e63); /* Glow yang lebih terang */
+}
+
+/* Animasi love */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(45deg) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(30px) rotate(-45deg) scale(1.5);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-30px) rotate(15deg) scale(1);
+    opacity: 0;
+  }
+}
+
+audio {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 300px;
+  opacity: 0;
+}
