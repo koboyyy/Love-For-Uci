@@ -70,9 +70,52 @@ span {
   }
 }
 
-audio {
-  margin-top: 20px;
-  width: 80%;
-  max-width: 300px;
-  opacity: 0;
+/* Gaya untuk seluruh pemutar */
+.radio-player {
+  position: fixed;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 255px; /* Lebar lebih kecil */
+  height: 40px; /* Tinggi lebih kecil */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 0, 128, 0.8)
+  );
+  opacity: 80%;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+/* Gaya untuk ikon play */
+.play-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-right: 4px;
+}
+
+h3 {
+  font-size: medium;
+  color: #fff;
+  font-family: "Great Vibes", cursive;
+}
+
+.play-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.8);
+}
+
+.play-icon svg {
+  fill: #fff; /* Warna ikon play */
+  width: 24px; /* Ukuran lebih kecil */
+  height: 24px;
 }
